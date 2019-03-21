@@ -50,19 +50,21 @@ void setup() {
   pinMode(1, OUTPUT);
   pinMode(2, OUTPUT);
   pinMode(3, OUTPUT);
+  pinMode(4, INPUT);
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
-  forward();
-  delay(1000);
-  reverse();
-  delay(1000);
-  left();
-  delay(1000);
-  right();
-  delay(1000);
-  stop();
-  delay(1000);
- 
+  delay(100);
+  if (digitalRead(4) == 0) {
+    reverse();
+    delay(500);
+    stop();
+    delay(100);
+    left();
+    delay(200);
+  } else {
+    forward();
+    delay(1000);
+  }
 }
