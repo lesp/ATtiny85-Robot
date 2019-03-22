@@ -4,8 +4,8 @@ void forward(){
   digitalWrite(0, HIGH);
   digitalWrite(1, LOW);
   //Motor B
-  digitalWrite(2, HIGH);
-  digitalWrite(3, LOW);
+  digitalWrite(2, LOW);
+  digitalWrite(3, HIGH);
 }
 void reverse(){
   //Reverse
@@ -13,8 +13,8 @@ void reverse(){
   digitalWrite(0, LOW);
   digitalWrite(1, HIGH);
   //Motor B
-  digitalWrite(2, LOW);
-  digitalWrite(3, HIGH);
+  digitalWrite(2, HIGH);
+  digitalWrite(3, LOW);
 }
 void left(){
   //Spin Left
@@ -22,8 +22,8 @@ void left(){
   digitalWrite(0, HIGH);
   digitalWrite(1, LOW);
   //Motor B backwards
-  digitalWrite(2, LOW);
-  digitalWrite(3, HIGH);    
+  digitalWrite(2, HIGH);
+  digitalWrite(3, LOW);    
 }
 void right(){
   //Spin Right
@@ -31,8 +31,8 @@ void right(){
   digitalWrite(0, LOW);
   digitalWrite(1, HIGH);
   //Motor B forwards
-  digitalWrite(2, HIGH);
-  digitalWrite(3, LOW);
+  digitalWrite(2, LOW);
+  digitalWrite(3, HIGH);
 }
 void stop(){
   //All motors off
@@ -55,12 +55,8 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  delay(100);
+  delay(500);
   if (digitalRead(4) == 0) {
-    reverse();
-    delay(500);
-    stop();
-    delay(100);
     left();
     delay(200);
   } else {
